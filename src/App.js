@@ -42,7 +42,7 @@ export class App extends Component {
   render() {
     return (
       <Router>
-        <Header currentUser={this.state.currentUser} />
+        <Header />
         <Switch>
           <Route exact path="/">
             <HomePage />
