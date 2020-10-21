@@ -16,6 +16,8 @@ const CustomButton = styled.button(
   font-weight: bolder;
   border: 1px solid rgba(0, 0, 0, 0);
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 
   &:hover {
     background-color: ${isGoogleSignIn ? "#357ae8" : "white"};
@@ -26,4 +28,17 @@ const CustomButton = styled.button(
 `
 );
 
+const InvertedButton = styled(CustomButton)`
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+
+  &:hover {
+    background-color: black;
+    color: white;
+    border: none;
+  }
+`;
+
+export { InvertedButton };
 export default CustomButton;
