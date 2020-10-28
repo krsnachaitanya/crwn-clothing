@@ -24,6 +24,15 @@ const CustomButton = styled.button`
     border: 1px solid black;
   }
 
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      background-color: lightgray;
+      color: gray;
+      pointer-events: none;
+      user-select: none;
+    `}
+
   ${({ isGoogleSignIn }) =>
     isGoogleSignIn &&
     css`
