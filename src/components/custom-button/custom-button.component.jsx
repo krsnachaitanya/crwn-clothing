@@ -1,7 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-const CustomButton = styled.button(
-  ({ isGoogleSignIn }) => `
+const CustomButton = styled.button`
   min-width: 165px;
   width: auto;
   height: 50px;
@@ -9,7 +8,7 @@ const CustomButton = styled.button(
   line-height: 50px;
   padding: 0 35px 0 35px;
   font-size: 15px;
-  background-color: ${isGoogleSignIn ? "#4285f4" : "black"};
+  background-color: black;
   color: white;
   text-transform: uppercase;
   font-family: "Open Sans Condensed";
@@ -20,13 +19,23 @@ const CustomButton = styled.button(
   justify-content: center;
 
   &:hover {
-    background-color: ${isGoogleSignIn ? "#357ae8" : "white"};
-    color: ${isGoogleSignIn ? "white" : "black"};
-    border: 1px solid;
-    border-color: ${isGoogleSignIn ? "#4285f4" : "black"};
+    background-color: white;
+    color: black;
+    border: 1px solid black;
   }
-`
-);
+
+  ${({ isGoogleSignIn }) =>
+    isGoogleSignIn &&
+    css`
+      background-color: #4285f4;
+
+      &:hover {
+        background-color: #357ae8;
+        color: white;
+        border: 1px solid #4285f4;
+      }
+    `}
+`;
 
 const InvertedButton = styled(CustomButton)`
   background-color: white;
