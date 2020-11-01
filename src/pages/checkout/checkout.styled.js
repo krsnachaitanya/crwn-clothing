@@ -12,6 +12,15 @@ export const CheckoutPageWrapper = styled.div`
     margin-left: auto;
     font-size: 36px;
   }
+  .test-warning {
+    text-align: center;
+    margin: 40px 0 20px 0;
+    font-size: 24px;
+    color: red;
+  }
+  button {
+    margin: 30px 0 0 auto;
+  }
 `;
 
 export const CheckoutHeader = styled.div`
