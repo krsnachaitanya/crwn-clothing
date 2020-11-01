@@ -8,6 +8,11 @@ export const selectCollections = createSelector(
   (shop) => shop.collections
 );
 
+export const selectCollectionsForPreview = createSelector(
+  [selectCollections],
+  (collections) => Object.keys(collections).map((key) => collections[key])
+);
+
 /* Memoize does the same idea of memoization as reselect does for our selectors, 
 except this time we're memoizing the return of our function which returns our selector */
 
