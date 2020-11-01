@@ -45,14 +45,10 @@ export class App extends Component {
       <Router>
         <Header />
         <Switch>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
+          <Route exact path="/" component={HomePage} />
         </Switch>
         <Switch>
-          <Route path="/shop">
-            <ShopPage />
-          </Route>
+          <Route path="/shop" component={ShopPage} />
         </Switch>
         <Switch>
           <Route exact path="/signin">
@@ -60,9 +56,7 @@ export class App extends Component {
           </Route>
         </Switch>
         <Switch>
-          <Route exact path="/checkout">
-            <CheckoutPage />
-          </Route>
+          <Route exact path="/checkout" component={CheckoutPage} />
         </Switch>
       </Router>
     );
