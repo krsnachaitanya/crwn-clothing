@@ -21,11 +21,13 @@ class ShopPage extends Component {
   componentDidMount() {
     const { updateCollections } = this.props;
     const collectionRef = db.collection("collections");
-    collectionRef.onSnapshot(async (snapshot) => {
-      const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
-      updateCollections(collectionsMap);
-      this.setState({ loading: false });
-    });
+    this.unsubscribeFromSnapshot = collectionRef.onSnapshot(
+      async (snapshot) => {
+        const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
+        updateCollections(collectionsMap);
+        this.setState({ loading: false });
+      }
+    );
   }
   render() {
     const { match } = this.props;
