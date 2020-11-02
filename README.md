@@ -1,6 +1,6 @@
-<h1 align="center">Welcome to crwn-clothing 👋</h1>
-
 ## Clothing ECommerce website built with React.js and Stripe payment integration
+
+[Live Demo Link](https://crwncrafts.herokuapp.com/)
 
 ### Author
 
